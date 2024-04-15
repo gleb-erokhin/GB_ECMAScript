@@ -17,14 +17,14 @@
         function mergeArrays(a, b) {
             // получаем атрибутами массивы
             // с помощью spread разварачиваем каждый массив и добавляем в новый массив
-            let result = [...a, ...b];
-            return result;
+            // spread оператор позволяет развернуть верхнюю по уровню структуру массива, разбирать массив необходимо по итерациям
+            return [...a, ...b];
         }
 
         const a = [1, 2, 3];
         const b = [4, 5, 6];
 
-        // console.log(mergeArrays(a, b));
+        console.log(mergeArrays(a, b));
     </script>
 </body>
 
