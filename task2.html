@@ -1,0 +1,57 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+
+<body>
+    <script>
+        // задание 2
+        // Создайте функцию removeDuplicates которая ​​принимает любое количество аргументов и возвращает новый массив, 
+        // содержащий только уникальные значения. 
+        // Используйте rest оператор для сбора всех аргументов в массив а затем filter для определения
+        // removeDuplicates(1, 2, 3, 2, 4, 1, 5); // Ожидаемый результат: [1, 2, 3, 4, 5]
+
+        // --- через for ---
+
+        function removeDuplicates(...args) {
+            let uniqueArray = [];
+
+            for (let i = 0; i < args.length; i++) {
+                if (uniqueArray.indexOf(args[i]) === -1) {
+                    uniqueArray.push(args[i]);
+                }
+            }
+            return uniqueArray;
+        }
+
+        // console.log(removeDuplicates(1, 2, 3, 2, 4, 1, 5));
+
+        // --- через filter ---
+        
+        function removeDuplicates2(...arr) {
+            return arr.filter((item, index) => {
+                return arr.indexOf(item) === index;
+            })
+        }
+
+        // console.log(removeDuplicates2(1, 2, 3, 2, 4, 1, 5));
+
+        // --- через Set ---
+        
+        function removeDuplicates3(...arr) {
+            // возвращаем массив
+            // через Set получаем уникальные значения
+            // с помощью values() делаем Set итерабельным
+            // через spred разварачиваем Set в массив
+            return [...new Set(arr).values()]
+        }
+
+        console.log(removeDuplicates3(1, 2, 3, 2, 4, 1, 5));
+    </script>
+</body>
+
+</html>
