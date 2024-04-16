@@ -8,7 +8,7 @@
 <body>
     <script>
         // Задание 1
-        
+
         // Дан массив const arr = [1, 5, 7, 9] с помощью Math.min и spread оператора, найти минимальное число в массиве, 
         // решение задание должно состоять из одной строки
         const arr = [3, 5, 7, 9];
@@ -17,7 +17,27 @@
             return Math.min(...arr);
         };
 
-        console.log(minFunc(arr));
+        // console.log(minFunc(arr));
+
+        // Напишите функцию createCounter, которая создает счетчик и возвращает объект с двумя методами: increment и decrement. Метод increment должен увеличивать значение счетчика на 1, а метод decrement должен уменьшать значение счетчика на 1. Значение счетчика должно быть доступно только через методы объекта, а не напрямую.
+
+        function createCounter(count) {
+            let temp = count;
+            return {
+                increment: (number) => temp += count,
+                decrement: (number) => temp -= count,
+            }
+        }
+
+        console.log("стартуем");
+        let counter = createCounter(1);
+        console.log("складываем");
+        console.log(counter.increment()); 
+        console.log(counter.increment()); 
+        console.log(counter.increment()); 
+        console.log("вычитаем");
+        console.log(counter.decrement()); 
+        console.log(counter.decrement()); 
     </script>
 </body>
 </html>
