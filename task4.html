@@ -1,0 +1,57 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+
+<body>
+    <script>
+        // Задание 4 №1
+        // Замыкания
+
+        // Напишите функцию createCalculator, которая принимает начальное значение и возвращает объект с двумя методами: add и subtract. Метод add должен увеличивать значение на переданное число, а метод subtract должен уменьшать значение на переданное число. Значение должно быть доступно только через методы объекта, а не напрямую.
+
+        // функция принимает число, и возвращает объект
+        function createCalculator(initialValue) {
+            // оставляем паараметр функции не изменным
+            let tempNumber = initialValue;
+            // методы add и subtract вложены внутрь функции. это и есть замыкание. Методы заключены в объект внутри функции и храняться в ней.
+            // напряямую при вызове функции мы не можем их использовать, надо вызвать функцию вложив ее в переменную = createCalculator(num);
+            return {
+                add: (number) => tempNumber += number,
+                subtract: (number) => tempNumber -= number,
+                getNumber: () => tempNumber
+            }
+        }
+
+        // Для работы с методами необхходимо результат работы функции передать в переменную и мы получим возврат объекта с двумя методами
+        // первое число мы передаем в 31 строке
+        let calculate = createCalculator(15);
+        // теперь через обращение переменной нам доступны методы add и subtract
+        // а в 35 строке мы уже через метод передаем number
+        calculate.add(5);
+        // метод get позволяет получить вычисленное значение
+        // console.log(calculate.getNumber());
+        calculate.subtract(5);
+        // console.log(calculate.getNumber());
+
+        // Задание 4 №2
+
+        // Напишите функцию createGreeting, которая принимает имя пользователя и возвращает функцию, которая будет выводить приветствие с использованием этого имени.
+
+        function createGreeting(userName) {
+            return function () {
+                console.log(`hello ${userName}`);
+            }
+        }
+
+        // Пример использования:
+        const greeting = createGreeting('John');
+        // greeting(); // Ожидаемый результат: "Hello, John!"
+    </script>
+</body>
+
+</html>
