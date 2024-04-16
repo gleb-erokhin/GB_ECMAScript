@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+
+<body>
+    <script>
+        // задание 5 №1
+
+        // Задача: Напишите функцию createPasswordChecker, которая принимает допустимую длину пароля в качестве аргумента и возвращает функцию для проверки введенного пароля.Возвращаемая функция должна принимать пароль и возвращать true, если его длина соответствует допустимой, и false в противном случае.
+
+        const createPasswordChecker = (validLength) => { // так у нас тут тогда должна быть вторая переменная 
+            return (password) => { // как сюда попадает то значение
+                return password.length < validLength;
+            };
+        };
+
+        // Пример использования:
+        // const isPasswordValid = createPasswordChecker(8);
+        // console.log(isPasswordValid('password')); // Ожидаемый результат: false
+        // console.log(isPasswordValid('secret')); // Ожидаемый результат: true
+
+        // задание 5 №2
+
+        // Напишите рекурсивную функцию sumDigits, которая принимает
+        // положительное целое число в качестве аргумента и возвращает
+        // сумму его цифр.
+
+        function sumDigits(num) {
+            
+        }
+ 
+        // Пример использования:
+        console.log(sumDigits(123)); // 6 (1 + 2 + 3)
+        console.log(sumDigits(456789)); // 39 (4 + 5 + 6 + 7 + 8 + 9)
+
+    </script>
+</body>
+
+</html>
