@@ -1,7 +1,14 @@
+// Создайте объект Person, представляющий человека, с
+// следующими свойствами: name, age и gender. Добавьте
+// также методы introduce и changeName. Метод introduce
+// должен выводить информацию о человеке, включая его
+// имя, возраст и пол. Метод changeName должен изменять
+// имя человека на новое заданное значение.
+
 const person = {
-    name:  "Jhon",
-    age: 0, 
-    gender: "",
+    name:  this.name,
+    age: this.age, 
+    gender: this.gender,
     introduce() {
         console.log(`My name is ${this.name} I'm ${this.age} years old and I identify as ${this.gender}.`);
     },
@@ -10,11 +17,13 @@ const person = {
     }
 }
 
+console.log('Task 1');
 person.name = "John";
 person.age = 25;
 person.gender = "male";
 person.introduce();
 person.changeName("Mike");
+person.age = 27;
 person.introduce();
 
 
@@ -30,13 +39,16 @@ const animal = {
 const dog = {
     name: "Rex",
     bark() {
-        console.log("Собака лает");
+        console.log(`${this.name} лает`);
     }
 }
 
+console.log('Task 2');
 
 dog.eat = animal.eat; // Вывод: Rex is eating.
 dog.eat();
+animal.bark = dog.bark;
+animal.bark();
 
 
 // Создайте объект calculator с методами add(), subtract() и multiply(), которые выполняют соответствующие математические операции над двумя числами. Используйте методы call и apply для вызова этих методов с передачей аргументов.
@@ -53,6 +65,17 @@ const calculator = {
     }
 }
 
-console.log(calculator.add.call(null, 5, 3)); // Вывод: 8
+const number = {
+    num1: 14,
+    num2: 3
+}
 
+console.log('Task 3');
+
+// null указывает что в данном случае мы берем из контекста калькулятора значения
+console.log(calculator.add.call(null, 5, 3)); // Вывод: 8
 console.log(calculator.subtract.apply(null, [5, 3])); // Вывод: 2
+
+// используем как раз имя объекта откуда берем значения. после чего по ключам забираем значения
+console.log(calculator.add.call(number, number.num1, number.num2)); // Вывод: 17
+
