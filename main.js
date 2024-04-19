@@ -73,8 +73,8 @@ const number = {
 console.log('Task 3');
 
 // null указывает что в данном случае мы берем из контекста калькулятора значения
-console.log(calculator.add.call(null, 5, 3)); // Вывод: 8
-console.log(calculator.subtract.apply(null, [5, 3])); // Вывод: 2
+console.log(calculator.add.call(null, 5, 3)); // Вывод: 8, call способ принятия значений перечислением
+console.log(calculator.subtract.apply(null, [5, 3])); // Вывод: 2, apply способ принятия значений массивом
 
 // используем как раз имя объекта откуда берем значения. после чего по ключам забираем значения
 console.log(calculator.add.call(number, number.num1, number.num2)); // Вывод: 17
