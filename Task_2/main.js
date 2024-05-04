@@ -35,22 +35,6 @@ class Order {
     }
 
     getListProduct() {
-        // return this.products[0]
-        // let arr = [];
-        // for (let i = 0; i < this.products.length; i++) {
-        //     arr.push(this.products[i]);
-        //     console.log(arr);
-        // }
-        // return arr;
-        // for (let product of this.products) {
-        //     // arr.push(product.name)
-        //     // arr.push(product.price)
-        //     // console.log(arr);
-        //     // return arr;
-        //     // console.log(product.getNameProduct());
-        //     // console.log(product.getPriceProduct());
-        //     return product
-        // }
         return this.products;
     }
 }
@@ -73,4 +57,4 @@ const product5 = new Product('pen', 10);
 order.addProduct(product5);
 
 console.log(order.getTotalPrice()); // Вывод: 600
-// console.log(order.getListProduct()); // показать список товаров
+// список товаров отображается в HTML файле, вывод всех данных так же в нем.
