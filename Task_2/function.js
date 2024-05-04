@@ -12,6 +12,22 @@ const header = createElement('h1', 'text', 'Управление персона�
 const paragraf = createElement('p', 'info', order.getTotalPrice())
 const paragraf2 = createElement('p', 'info', order.getListProduct())
 
+let newData = order.getListProduct();
+console.log(newData);
+
+const itemBox = document.querySelector(".main");
+
+newData.forEach((element) => {
+    itemBox.insertAdjacentHTML(
+        "beforeend",
+    `
+    <p class="info">
+        ${element.name}, ${element.price}
+    </p>
+    `
+    );
+});
+
 // Добавляем элементы на страницу
 document.body.append(mainTag);
-mainTag.append(header, paragraf, paragraf2);
+mainTag.append(header, paragraf, itemBox);
