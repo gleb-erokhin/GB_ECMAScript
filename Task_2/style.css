@@ -24,6 +24,14 @@ body {
 }
 
 .info {
-    padding-top: 50px;
+    padding-top: 30px;
     font-family: 'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;
+}
+
+.ol-List {
+    padding-top: 50px;
+}
+
+.bold_text {
+    font-weight: 800;
 }

@@ -69,6 +69,8 @@ order.addProduct(product3);
 const product4 = new Product('table', 500);
 order.addProduct(product4);
 
+const product5 = new Product('pen', 10);
+order.addProduct(product5);
+
 console.log(order.getTotalPrice()); // Вывод: 600
 // console.log(order.getListProduct()); // показать список товаров
-order.getListProduct();
